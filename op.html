@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Color Changer</title>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, sans-serif;
+        transition: background 0.5s ease;
+    }
+
+    .box {
+        text-align: center;
+    }
+
+    button {
+        padding: 12px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        background: #333;
+        color: #fff;
+    }
+
+    button:hover {
+        background: #555;
+    }
+
+    p {
+        margin-top: 10px;
+        font-size: 18px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="box">
+    <button onclick="changeColor()">Change Color</button>
+    <p id="colorCode">#ffffff</p>
+</div>
+
+<script>
+function changeColor() {
+    const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+
+    document.body.style.background = randomColor;
+    document.getElementById("colorCode").innerText = randomColor;
+}
+</script>
+
+</body>
+</html>
